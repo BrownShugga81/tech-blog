@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const sequelize = require('./connection')
 
+const routes = require('./controllers/');
+
 //handlebars
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
@@ -20,6 +22,6 @@ app.set('view engine', 'handlebars');
 //running
 
 app.listen(PORT, () => {
-    console.log("we're doing it live")
+    console.log("server is live")
     sequelize.sync({ force: false })
 })
